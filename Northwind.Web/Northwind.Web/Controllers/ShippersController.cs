@@ -9,19 +9,14 @@ using System.Web.OData;
 
 namespace Northwind.Web.Controllers
 {
-    public class ProductsController : ODataController
+    public class ShippersController : ODataController
     {
         NorthwindDb _context = new NorthwindDb();
 
         [EnableQuery]
-        public IQueryable<Product> Get()
+        public IQueryable<Shipper> Get()
         {
-            return _context.Products;
-        }
-
-        public Product GetProduct([FromODataUri] int key)
-        {
-            return _context.Products.Single(p => p.ProductID == key);
+            return _context.Shippers;
         }
     }
 }

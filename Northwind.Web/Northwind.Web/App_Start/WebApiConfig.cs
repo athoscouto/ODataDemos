@@ -25,7 +25,17 @@ namespace Northwind.Web
 
             var builder = new ODataConventionModelBuilder();
 
+            builder.EntitySet<Category>("Categories");
+            builder.EntitySet<Customer>("Customers");
+            builder.EntitySet<CustomerDemographic>("CustomerDemographics");
+            builder.EntitySet<Employee>("Employees");
+            builder.EntitySet<Order>("Orders");
+            builder.EntitySet<Order_Detail>("Order_Details");
             builder.EntitySet<Product>("Products");
+            builder.EntitySet<Region>("Regions");
+            builder.EntitySet<Shipper>("Shippers");
+            builder.EntitySet<Supplier>("Suppliers");
+            builder.EntitySet<Territory>("Territories");
 
             config.MapODataServiceRoute("ODataRoute", null, builder.GetEdmModel());
         }
